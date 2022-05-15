@@ -30,9 +30,13 @@ for page, url in enumerate(page_urls):
       episode = {
         'title': cols[1].text,
         'matthew': cols[2].text.strip(),
+        'matthew_ordered': bool(cols[2].find('b')),
         'mark': cols[3].text.strip(),
+        'mark_ordered': bool(cols[3].find('b')),
         'luke': cols[4].text.strip(),
+        'luke_ordered': bool(cols[4].find('b')),
         'john': cols[5].text.strip(),
+        'john_ordered': bool(cols[5].find('b')),
       }
       section['episodes'].append(episode)
     result.append(section)
